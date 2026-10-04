@@ -142,11 +142,11 @@ function executeGesture(gesture) {
     case "DU": // 下→上：ページの更新（リロード）
       location.reload();
       break;
-    case "UR": // 上→右：新規タブを開く
-      chrome.runtime.sendMessage({ action: "openNewTab" });
+    case "UL": // 上→左：左隣のタブへ移動 【★変更】
+      chrome.runtime.sendMessage({ action: "switchTabLeft" });
       break;
-    case "UL": // 上→左：最後に閉じたタブを復元
-      chrome.runtime.sendMessage({ action: "restoreTab" });
+    case "UR": // 上→右：右隣のタブへ移動 【★変更】
+      chrome.runtime.sendMessage({ action: "switchTabRight" });
       break;
     default:
       console.log("未登録のジェスチャー:", gesture);
