@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "My Custom Mouse Gestures",
+  "version": "1.1.0",
+  "description": "プライベートで安全な自分専用マウスジェスチャー拡張機能",
+  "permissions": [
+    "activeTab",
+    "sessions"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
